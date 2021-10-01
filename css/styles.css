@@ -1,0 +1,177 @@
+html, body {
+	line-height: 1.3em;
+	font-size: 14px;
+	font: Arial;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 400px;
+	min-width: 600px;
+}
+
+header {
+	color: #FFAC37;
+	font-weight: bold;
+	background-color: #241300;
+	flex-shrink: 0;
+	line-height: 50px;
+}
+
+header > img {
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	margin: 0 10px;
+}
+
+.game-infobar {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.game-infobar > div {
+	display: inline-block;
+	padding: 0 6px;
+}
+
+main {
+	flex: 1 100%;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+#start {
+	/*display: none;*/
+	width: 100%;
+	height: 100%;
+}
+
+#start:before {
+	filter: blur(5px);
+	height: 100%;
+	width: 100%;
+	background-image: url(../img/Game_Field_Background.png);
+	background-size: 100%;
+	content: "";
+	position: absolute;
+	top: 50px; left: 0;
+}
+
+#start-button {
+	background-color: #241300;
+	padding: 10px 15px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	color: #FFAC37;
+	font-size: 20px;
+	border-color: #FFAC37;
+	border-radius: 12px;
+	border-width: 4px;
+	transform: translate(-50%, -50%);
+}
+
+#game {
+	display: none;
+	/*display: flex;*/
+	height: 100%;
+	width: 100%;
+}
+
+#game-map {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	width: 70%;
+	overflow: hidden;
+}
+
+#game-map:before {
+	filter: opacity(0.6);
+	height: 100%;
+	width: 100%;
+	background-image: url(../img/Game_Field_Background.png);
+	background-size: 100%;
+	content: "";
+	position: absolute;
+	top: 0; left: 0;
+	/*background-color: red;*/
+	animation: animatedBackground 10s ease-in-out infinite;
+}
+
+@keyframes animatedBackground {
+	from { filter: opacity(0.6) hue-rotate(0deg) blur(0); }
+	50% { filter: opacity(0.7) hue-rotate(20deg) blur(4px); }
+	to { filter: opacity(0.6) hue-rotate(0deg) blur(0); }
+}
+
+.game-controls {
+	display: inline-block;
+	height: 100%;
+	width: 30%;
+	background-color: #044972;
+}
+
+#game-player {
+	display: inline-block;
+	position: absolute;
+	/*bottom: 10px;
+	left: 50%;*/
+	width: 40px;
+	height: 100px;
+	background-image: url(../img/Starships/Hero_Ship.png);
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	/*background-color: red;*/
+}
+
+.game-player-bullet {
+	position: absolute;
+	/*bottom: 50%;
+	left: 50%*/;
+	width: 10px;
+	height: 60px;
+	background-image: url(../img/Shots/Hero_Shot.png);
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	/*background-color: red;*/
+}
+
+.game-enemy {
+	display: inline-block;
+	position: absolute;
+	background-position: center;
+	background-size: 100%;
+	width: 60px; 
+	background-repeat: no-repeat;
+	/*background-color: red;*/
+}
+
+.game-enemy1 { height: 100px; background-image: url(../img/Starships/Enemy_Ship_1.png); }
+.game-enemy2 { height: 130px; background-image: url(../img/Starships/Enemy_Ship_2.png); }
+.game-enemy3 { height: 110px; background-image: url(../img/Starships/Enemy_Ship_3.png); }
+.game-enemy4 { height: 130px; background-image: url(../img/Starships/Enemy_Ship_4.png); }
+
+.game-enemy-bullet {
+	position: absolute;
+	background-position: center;
+	background-size: 100%;
+	width: 20px;
+	background-repeat: no-repeat;
+	/*background-color: red;*/
+}
+
+.game-enemy-bullet1 { height: 25px; background-image: url(../img/Shots/Enemy_Shot_1.png); }
+.game-enemy-bullet2 { height: 45px; background-image: url(../img/Shots/Enemy_Shot_2.png); }
+.game-enemy-bullet3 { height: 70px; background-image: url(../img/Shots/Enemy_Shot_3.png); }
+.game-enemy-bullet4 { height: 40px; background-image: url(../img/Shots/Enemy_Shot_4.png); }
